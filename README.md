@@ -1,5 +1,5 @@
 # Jupyter_module
-JupyterDragon est une extension Jupyter qui permet d'ameliorer l'interface 
+JupyterDragon est une extension qui permet d'ameliorer l'interface Jupyter.
 # Display latex expression
 %display latex
 
