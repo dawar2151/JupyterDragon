@@ -1,5 +1,5 @@
 /*
- Add this file to $(ipython locate)/nbextensions/sageDragon.js
+ Add this file to $(ipython locate)/nbextensions/jupyterDragon.js
  And load it with:
 */ 
  require(["nbextensions/jupyterDragon"], function (jupyterDragon_extension) {
