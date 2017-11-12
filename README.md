@@ -9,7 +9,7 @@ JupyterDragon est une extension qui permet d'ameliorer l'interface Jupyter.
 {% include base_url + "/sageDragon/templates/header.html" %}
 <!--------------------------------------------------------->
 
-#add module jupyterDragon
+# add module jupyterDragon
 
 import notebook.nbextensions
 notebook.nbextensions.install_nbextension('Extension Js Path', user=True)
