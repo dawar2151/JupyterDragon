@@ -1,5 +1,5 @@
 # Jupyter_module
-JupyterDragon est une extension Jupyter qui permet d'ameliorer l'interface 
+JupyterDragon est une extension qui permet d'ameliorer l'interface Jupyter.
 # Display latex expression
 %display latex
 
@@ -9,7 +9,7 @@ JupyterDragon est une extension Jupyter qui permet d'ameliorer l'interface
 {% include base_url + "/sageDragon/templates/header.html" %}
 <!--------------------------------------------------------->
 
-#add module jupyterDragon
+# add module jupyterDragon
 
 import notebook.nbextensions
 notebook.nbextensions.install_nbextension('Extension Js Path', user=True)
@@ -19,6 +19,13 @@ notebook.nbextensions.install_nbextension('Extension Js Path', user=True)
 
 %%javascript
 Jupyter.utils.load_extensions('jupyterDragon')
+
+# Exemple d'utilisation de sympy
+
+from sympy import Symbol, cos
+x = Symbol('x')
+e = 1/cos(x)
+print (e.series(x, 0, 10))
 
 
 
