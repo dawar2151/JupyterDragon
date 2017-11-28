@@ -1,5 +1,4 @@
-define([
-    'base/js/namespace' ], function(Jupyter) {
+define(['base/js/namespace' ], function(Jupyter) {
      //developpe les formules
     //simplifie les formules
     var simplify = function (cell) 
@@ -20,16 +19,13 @@ define([
         }
         //vérification de la formule et exécution de la commande    
         check_and_execute_formule(cell, operation); 
-            }
-        else
-        {
+        }else{
                 alert("Formule non valide");
         }
     };
     var getCellSelectCellText = function(){   
-        $('.output_result').click(function(){ 
+        $('.MathJax').click(function(){ 
             alert(window.getSelection().toString());
-            
         });
     };
     getCellSelectCellText();
@@ -40,10 +36,10 @@ define([
     var check_and_execute_formule = function (cell, operation)
     {
         //Exécute une commande "opération" via le kernel
-                //cell.get_callbacks() permet de récupérer le résultat et de le mettre dans l'output de la cellule
+        //cell.get_callbacks() permet de récupérer le résultat et de le mettre dans l'output de la cellule
         Jupyter.notebook.kernel.execute(operation, cell.get_callbacks(), {silent:false} );
         //On attend le résultat
-                setTimeout(function(){
+             setTimeout(function(){
             //si output contient une erreur on vide l'output et on indique que la formule n'est pas valide
             if(cell.output_area.outputs[0].traceback != undefined){         
                 cell.output_area.clear_output();
@@ -67,6 +63,7 @@ define([
         return resultat;
     };   
     function load_ipython_extension() {
+        Jupyter.notebook.kernel.execute("%display latex");
         var handler = function () {
             var cell = Jupyter.notebook.get_cell(Jupyter.notebook.get_selected_cells_indices());
             simplify(cell);
@@ -74,7 +71,7 @@ define([
         console.log('hello world from jupyterDragon');
         var action = {
             icon: 'fa-comment-o', // a font-awesome class used on buttons, etc
-            help    : 'Show an alert',
+            help    : 'jupyterDragon button',
             help_index : 'zz',
             handler : handler
         };

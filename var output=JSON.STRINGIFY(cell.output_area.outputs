@@ -1,0 +1,2 @@
+var output=JSON.STRINGIFY(cell.output_area.outputs[Jupyter.notebook.get_selected_cells_indices()].data["text/plain"].getSelectedText())
+alert(output)
