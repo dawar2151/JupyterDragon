@@ -73,6 +73,7 @@ define(['base/js/namespace' ], function(Jupyter) {
         var handler = function () {
             var cell = Jupyter.notebook.get_cell(Jupyter.notebook.get_selected_cells_indices());
             simplify(cell);
+            
         };
         console.log('hello world from jupyterDragon');
         var action = {
